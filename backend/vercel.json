@@ -1,0 +1,12 @@
+{
+  "routes":[
+    {
+      "src":"vercel.json",
+      "dest":"api/ingv-latest.js"
+    },
+    {
+      "src":"/latest",
+      "dest":"/api/ingv-latest.js"
+    }
+  ]
+}
