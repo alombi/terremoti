@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 var parseString = require('xml2js').parseString;
 
-let type, region, lat, long, depth, time, magnitudo, magnitudoUncertainty;
+let type, region, lat, long, depth, time, magnitudo, magnitudoUncertainty, color;
 
 async function getLatest(){
   // Get date
@@ -34,7 +34,7 @@ async function getLast37(){
   let last37 = {
     events:[]
   }
-  let url = 'http://webservices.ingv.it/fdsnws/event/1/query';
+  let url = 'https://webservices.ingv.it/fdsnws/event/1/query';
   let request = await fetch(url)
   let response = await request.text()
   let responseFormatted;
@@ -49,6 +49,12 @@ async function getLast37(){
     depth = responseFormatted[i].origin[0].depth[0].value[0];
     time = responseFormatted[i].origin[0].time[0].value[0];
     magnitudo = responseFormatted[i].magnitude[0].mag[0].value[0];
+    // Checking color
+    if(Number(magnitudo) > 1.9){
+      color = 'orange'
+    }else{
+      color = 'green'
+    }
     magnitudoUncertainty = responseFormatted[i].magnitude[0].mag[0].uncertainty[0]
     eventID = responseFormatted[i].$.publicID.replace('smi:webservices.ingv.it/fdsnws/event/1/query?eventId=', '')
     var event = {
@@ -60,6 +66,7 @@ async function getLast37(){
       'time':time,
       'mag':magnitudo,
       'magUncertainty':magnitudoUncertainty,
+      'color':color,
       'eventID':eventID
     };
     last37.events.push(event)

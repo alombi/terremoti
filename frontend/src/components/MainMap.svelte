@@ -13,7 +13,7 @@
          'lat':lat,
          'lng':long,
          'icon':{
-         'iconUrl':'/assets/earthquake.png',
+         'iconUrl':`/assets/${data[i].color}.png`,
          tooltipAnchor: [-4, 10],
          iconSize: [32, 32],
          iconAnchor: [20, 23],
@@ -31,7 +31,7 @@
    }
 	let options = {
       attributionControl:false,
-      center: [43,13],
+      center: [42,13],
       zoom:6,
       controls:{
          zoomControl:true
