@@ -11,3 +11,9 @@
       <a href="/about">About</a>
    </div>
 </div>
+
+<style>
+   a{
+      font-size:15px;
+   }
+</style>
