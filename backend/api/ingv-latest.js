@@ -50,7 +50,9 @@ async function getLast37(){
     time = responseFormatted[i].origin[0].time[0].value[0];
     magnitudo = responseFormatted[i].magnitude[0].mag[0].value[0];
     // Checking color
-    if(Number(magnitudo) > 1.9){
+    if(Number(magnitudo) > 3.9){
+      color = 'red'
+    }else if(Number(magnitudo) > 1.9){
       color = 'orange'
     }else{
       color = 'green'
