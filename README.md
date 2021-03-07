@@ -1,4 +1,4 @@
-# Latest erathquakes in Italy 🌍 🇮🇹
+# Latest earthquakes in Italy 🌍 🇮🇹
 <a href="https://ingv.alombi.xyz">Live app</a> | <a href="http://www.ingv.it/">Source</a>
 
 This project is a web application for monitoring latest earthquakes in Italy, and showing them in an interactive and well-looking map.
