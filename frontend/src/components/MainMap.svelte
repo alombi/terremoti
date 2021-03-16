@@ -21,9 +21,10 @@
          tooltip:{
             isOpen:false,
             interactive:true,
+            sticky:true,
             direction: "top",
             permanent:false,
-            text:`<a href="/event/${data[i].eventID}">${data[i].region}</a>`
+            text:`<strong>${data[i].region} | ${ data[i].time.split('.')[0].replace('T', ' at ') }<br>${data[i].mag} Magnitude - depth: ${Number(data[i].depth) / 1000} Km</strong>`
          }
       }
       markers.push(obj);

@@ -33,7 +33,7 @@
 	}
 </script>
 
-<h1 class="title">{event.mag} Magnitude  - {event.time.split('.')[0].replace('T', ' at ')}</h1>
+<h1 class="title">{event.mag} Magnitude  | {event.time.split('.')[0].replace('T', ' at ')}</h1>
 <div class="map">
    <Map {options} />
  </div>
