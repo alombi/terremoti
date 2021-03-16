@@ -57,7 +57,11 @@ async function getLast37(){
     }else{
       color = 'green'
     }
-    magnitudoUncertainty = responseFormatted[i].magnitude[0].mag[0].uncertainty[0]
+    try {
+      magnitudoUncertainty = responseFormatted[i].magnitude[0].mag[0].uncertainty[0]
+    } catch (err) {
+      magnitudoUncertainty = null
+    }
     eventID = responseFormatted[i].$.publicID.replace('smi:webservices.ingv.it/fdsnws/event/1/query?eventId=', '')
     var event = {
       'type':type,
