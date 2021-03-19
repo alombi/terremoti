@@ -55,7 +55,7 @@ async function getLast37(){
     }else if(Number(magnitudo) > 1.9){
       color = 'orange'
     }else{
-      color = 'green'
+      color = 'yellow'
     }
     try {
       magnitudoUncertainty = responseFormatted[i].magnitude[0].mag[0].uncertainty[0]
