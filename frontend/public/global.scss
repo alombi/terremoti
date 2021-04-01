@@ -53,7 +53,7 @@ a{
    }
 }
 .title{
-   font-weight:900;
+   font-weight:700;
    font-size: 35px;
    padding-top:30px;
 }
@@ -80,4 +80,9 @@ a{
 	.list{
 		grid-template-columns: 100%;
 	}
+}
+@media(max-width:1000px){
+   #desktop_only{
+      display: none;
+   }
 }

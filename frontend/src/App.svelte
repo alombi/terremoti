@@ -24,7 +24,7 @@
 <main>
 	<Navbar />
 	<Route path="/">
-	<!-- <h1 class="title">Latest earthquakes from INGV</h1> -->
+	<h1 class="title">Latest earthquakes <span id="desktop_only">in Italy</span></h1>
 	{#await promise}
 		<div class="spinner">
 			<Jumper size="60" color="#FFFFFF" unit="px" duration="1s"></Jumper>

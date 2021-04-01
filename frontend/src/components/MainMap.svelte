@@ -53,9 +53,3 @@
 	<div class="map">
 	  <Map {options} />
 	</div>
-   
-   <style>
-      .map{
-         padding-top:55px;
-      }
-   </style>
