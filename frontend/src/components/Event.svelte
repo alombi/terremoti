@@ -31,6 +31,11 @@
       },],
       mapID: "map"
 	}
+   function removeSpecialEvent(){
+      document.getElementsByClassName('navbar')[0].style.top = "0px";
+      document.getElementsByTagName('body')[0].style.paddingTop = "0px";
+   }
+   removeSpecialEvent()
 </script>
 
 <h1 class="title">{event.mag} Magnitude  | {event.time.split('.')[0].replace('T', ' at ')}</h1>
