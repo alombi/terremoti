@@ -4,8 +4,12 @@
 
 </script>
 
-<div class="special_event_bar">
-   <a href="/event/{event.eventID}">Highlighted event: {event.region.split('[')[0]} - {event.mag} Mg</a>
+<div>
+   {#if event != null}
+      <div class="special_event_bar">
+         <a href="/event/{event.eventID}">Highlighted event: {event.region.split('[')[0]} - {event.mag} Mg</a>
+      </div>
+   {/if}
 </div>
 
 <style>
