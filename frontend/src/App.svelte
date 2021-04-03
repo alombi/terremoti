@@ -10,6 +10,7 @@
 	import { events } from './events.js';
 	import { specialEvent } from './specialEvent.js'
 	import { Route, router } from 'tinro';
+	import Footer from './components/Footer.svelte';
 	router.mode.memory();
 	let data = [];
 	let promise;
@@ -44,6 +45,7 @@
 		<br><hr>
 		<h2 id="list_title">Earthquakes list</h2>
 		<MainList />
+		<Footer />
 	{/await}
 	</Route>
 	<Route path="event/:id" let:meta>
