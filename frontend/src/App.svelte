@@ -63,6 +63,7 @@
 		<br><hr>
 		<div id="list_title_div">
 			<h2 id="list_title">Earthquakes list</h2>
+			<!-- svelte-ignore a11y-no-onchange -->
 			<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
 				<option value="latest">Sort per latest</option>
 				<option value="important">Sort per importance</option>
