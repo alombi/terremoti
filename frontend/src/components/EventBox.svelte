@@ -31,7 +31,7 @@
 	}
 </script>
 
-<a class="event" href="/event/{event.id}">
+<a class="event" href="/event/{event.eventID}">
    <div>
       <div class="map">
          <Map {options} />
