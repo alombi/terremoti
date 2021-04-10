@@ -62,6 +62,18 @@ a {
   width: 100%;
 }
 
+#list_title_div {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+#sort {
+  align-self: center;
+  justify-self: end;
+  margin-top: 10px;
+  font-size: 13.5px;
+}
+
 @media (min-width: 1000px) {
   .map {
     height: 650px;

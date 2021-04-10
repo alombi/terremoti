@@ -13,7 +13,8 @@
 	import Footer from './components/Footer.svelte';
 	router.mode.memory();
 	let data = [];
-	let promise;
+	let sort;
+	let promise, updatingList;
 	async function getData(){
 		let request = await fetch('https://ingv.vercel.app/latest')
 		let response = await request.json()
@@ -22,6 +23,23 @@
 		var special = response.specialEvent
 		specialEvent.set(special)
 		return data 
+	}
+	async function changeSort(){
+		var sorting = document.getElementById('sort').value;
+		if(sorting == "important"){
+			var newData = data.sort((a, b) => {
+    			return a.mag - b.mag;
+			});
+			updatingList = new Promise(function(resolve, reject) {
+   			resolve()
+			});
+			events.set(newData.reverse())
+		}else{
+			var newData = await getData()
+			updatingList = new Promise(function(resolve, reject) {
+   			resolve()
+			});
+		}
 	}
 	promise = getData()
 </script>
@@ -43,8 +61,18 @@
 		<h1 class="title">Latest earthquakes <span id="desktop_only">in Italy</span></h1> 
 		<MainMap />
 		<br><hr>
-		<h2 id="list_title">Earthquakes list</h2>
-		<MainList />
+		<div id="list_title_div">
+			<h2 id="list_title">Earthquakes list</h2>
+			<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
+				<option value="latest">Sort per latest</option>
+				<option value="important">Sort per importance</option>
+			</select>
+		</div>	
+		{#await updatingList}
+			<span></span>
+		{:then}
+			<MainList />
+		{/await}
 		<Footer />
 	{/await}
 	</Route>

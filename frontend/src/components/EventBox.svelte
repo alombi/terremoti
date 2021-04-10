@@ -1,12 +1,11 @@
 <script>
-   import { events } from '../events.js';
+   //import { events } from '../events.js';
    import Map from '@anoram/leaflet-svelte';   
-   let data = $events;
-   export let id;
-   function checkId(event){
-      return event.eventID == id 
-   }
-   const event = data.filter(checkId)[0]
+   export let event;
+   // function checkId(event){
+   //    return event.eventID == id 
+   // }
+   // const event = $events.filter(checkId)[0]
    let options = {
       attributionControl:false,
       center: [event.lat,event.long],
@@ -32,7 +31,7 @@
 	}
 </script>
 
-<a class="event" href="/event/{id}">
+<a class="event" href="/event/{event.id}">
    <div>
       <div class="map">
          <Map {options} />

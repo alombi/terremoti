@@ -1,3 +1,7 @@
+<script>
+   let now = new Date()
+   let year = now.getFullYear()
+</script>
 <div class="footer">
-   <p>© 2021 alombi - Designed and developed by alombi - Data from INGV</p>
+   <p>© {year} alombi - Designed and developed by alombi - Data from INGV</p>
 </div>
