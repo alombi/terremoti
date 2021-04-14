@@ -1,0 +1,14 @@
+#list_title_div{
+   display:grid;
+   grid-template-columns: 80% 20%;
+}
+.list{
+   display:grid;
+   grid-template-columns: repeat(3, 3fr);
+   justify-items: center;
+}
+@media(max-width:1000px){
+	.list{
+		grid-template-columns: 100%;
+	}
+}

@@ -20,6 +20,7 @@
    })
 </script>
 
+<div class="fake"></div>
 <div class="navbar">
    <a on:click={initialize} id="logo" href="/">🌍 Earthquakes</a>
    <div id="options">

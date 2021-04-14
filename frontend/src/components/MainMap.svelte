@@ -46,7 +46,11 @@
       let isRefreshed = sessionStorage.getItem('refresh');
       if(isRefreshed == 'true'){
          sessionStorage.removeItem('refresh')
-         addNotification({ text: 'Refreshed!', position: 'top-center', type:'success', removeAfter: 2000 })
+         if(screen.width > 1000){
+            addNotification({ text: 'Refreshed!', position: 'bottom-right', type:'success', removeAfter: 2000 })
+         } else {
+            addNotification({ text: 'Refreshed!', position: 'top-right', type:'success', removeAfter: 2000 })
+         }
       }
    })
 	</script>
