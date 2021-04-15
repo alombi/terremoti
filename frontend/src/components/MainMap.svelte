@@ -1,5 +1,5 @@
 <script>
-	import Map from '@anoram/leaflet-svelte';   
+   import Map from '@anoram/leaflet-svelte';   
    import { onMount } from 'svelte';
    import { getNotificationsContext } from 'svelte-notifications';
    const { addNotification } = getNotificationsContext();
