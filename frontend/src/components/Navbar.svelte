@@ -11,9 +11,9 @@
    }
    function initialize(){
       let event = $specialEvent;
-      if (event != null){
-         setSpecialEvent()
-      }
+      // if (event != null){
+      //    setSpecialEvent()
+      // }
    }
    onMount(()=>{
       initialize()

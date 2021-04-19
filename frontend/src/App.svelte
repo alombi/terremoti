@@ -49,7 +49,7 @@
 	{#await promise}
 		<p></p>
 	{:then}
-		<SpecialEventBar />
+		<!-- <SpecialEventBar /> -->
 		<Navbar/>
 	{/await}
 	<Route path="/">
