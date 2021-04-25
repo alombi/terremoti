@@ -17,7 +17,7 @@ Yep I've also written a small iOS widget that show the latest event right in you
 
 **Note: requires iOS 14 or newer and the Scriptable app.**
 ### How to setup 
-1. Download the [Scriptable](https://scriptable.app) on your device
+1. Download the [Scriptable](https://scriptable.app) app on your device
 2. Copy the widget's code from the link above
 3. Create a new script in the Scriptable app
 4. Paste the code you just copied
