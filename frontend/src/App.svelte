@@ -4,6 +4,7 @@
 	import MainList from './components/MainList.svelte';
 	import Event from './components/Event.svelte';
 	import About from './components/About.svelte';
+	import SplitView from './components/SplitView.svelte';
 	import SpecialEventBar from './components/SpecialEventBar.svelte';
 	import { Jumper } from 'svelte-loading-spinners'
 	import Notifications from 'svelte-notifications';
@@ -42,6 +43,11 @@
 		}
 	}
 	promise = getData()
+	// Detecting screen width and deciding if splitView needs to be applied
+	let splitView = false;
+	if(window.screen.width > 600){
+		splitView = true
+	}
 </script>
 
 <Notifications>
@@ -59,21 +65,25 @@
 		</div>
 	{:then data}
 		<h1 class="title">Latest earthquakes <span id="desktop_only">in Italy</span></h1> 
-		<MainMap />
-		<br><hr>
-		<div id="list_title_div">
-			<h2 id="list_title">Earthquakes list</h2>
-			<!-- svelte-ignore a11y-no-onchange -->
-			<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
-				<option value="latest">Sort per latest</option>
-				<option value="important">Sort per importance</option>
-			</select>
-		</div>	
-		{#await updatingList}
-			<span></span>
-		{:then}
-			<MainList />
-		{/await}
+		{#if !splitView}
+			<MainMap />
+			<br><hr>
+			<div id="list_title_div">
+				<h2 id="list_title">Earthquakes list</h2>
+				<!-- svelte-ignore a11y-no-onchange -->
+				<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
+					<option value="latest">Sort per latest</option>
+					<option value="important">Sort per importance</option>
+				</select>
+			</div>	
+			{#await updatingList}
+				<span></span>
+			{:then}
+				<MainList />
+			{/await}
+		{:else}
+			<SplitView />
+		{/if}
 		<Footer />
 	{/await}
 	</Route>

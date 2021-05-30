@@ -7,6 +7,15 @@
    grid-template-columns: repeat(3, 3fr);
    justify-items: center;
 }
+.event{
+   background-color: #393A3C;
+   width:98%;
+	margin-bottom:25px;
+	border-radius:10px;
+   text-align: center;
+   text-decoration: none;
+   color: white;
+}
 @media(max-width:1000px){
 	.list{
 		grid-template-columns: 100%;
