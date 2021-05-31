@@ -45,7 +45,7 @@
 	promise = getData()
 	// Detecting screen width and deciding if splitView needs to be applied
 	let splitView = false;
-	if(window.screen.width > 600){
+	if(window.innerWidth > 900){
 		splitView = true
 	}
 </script>
