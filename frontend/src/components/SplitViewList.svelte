@@ -16,5 +16,3 @@
       {/each}
    </div>
 </div>
-<span></span>
-<p id="did">Scroll down and tap one event to focus</p>

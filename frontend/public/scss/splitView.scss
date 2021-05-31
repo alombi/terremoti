@@ -20,4 +20,11 @@
 #did{
    font-size:12px;
    opacity: 0.7;
+   padding-left: 10px;
+   margin-bottom:-20px;
+}
+.splitSelector{
+   display: grid;
+   grid-template-columns: repeat(4, 25%);
+   margin-bottom: 5px;
 }

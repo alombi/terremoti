@@ -82,6 +82,16 @@
 				<MainList />
 			{/await}
 		{:else}
+			<div class="splitSelector">
+				<span></span>
+				<span></span>
+				<p id="did">Scroll down and tap one event to focus</p>
+				<!-- svelte-ignore a11y-no-onchange -->
+				<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
+					<option value="latest">Sort per latest</option>
+					<option value="important">Sort per importance</option>
+				</select>
+			</div>
 			<SplitView />
 		{/if}
 		<Footer />
