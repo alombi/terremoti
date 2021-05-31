@@ -8,9 +8,13 @@
 </script>
 
 <div class="splittedList">
-   {#each $events as event}
-      <div class="splittedEvent" id={event.eventID} on:click={focusOnEvent}>
-         <h3 id={event.eventID}>{event.region}</h3>
-      </div>
-   {/each}
+   <div>
+      {#each $events as event}
+         <div class="splittedEvent" id={event.eventID} on:click={focusOnEvent}>
+            <h3 id={event.eventID}>{event.region}</h3>
+         </div>
+      {/each}
+   </div>
 </div>
+<span></span>
+<p id="did">Scroll down and tap one event to focus</p>

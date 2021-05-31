@@ -1,11 +1,10 @@
 .split{
    display: grid;
    grid-template-columns: repeat(2, 50%);
-   
 }
 .splittedList{
    margin-left:10px;
-   max-height: 650px;
+   max-height: 580px;
    overflow-x: scroll;
 }
 .splittedEvent{
@@ -17,4 +16,8 @@
    text-align: center;
    text-decoration: none;
    color: white;
+}
+#did{
+   font-size:12px;
+   opacity: 0.7;
 }
