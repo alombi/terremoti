@@ -118,6 +118,14 @@
   max-height: 580px;
   overflow-x: scroll;
 }
+.splittedList .event {
+  display: grid;
+}
+.splittedList .event .map {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  height: 150px;
+}
 
 .splittedEvent {
   background-color: #393A3C;

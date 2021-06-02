@@ -5,6 +5,6 @@
 
 <div class="list">
    {#each $events as event}
-      <EventBox event={event} />
+      <EventBox event={event} zoom=10 />
    {/each}
 </div>

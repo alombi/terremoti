@@ -55,9 +55,9 @@
       }
    })
 
-   let unsubscribeStore = focus.subscribe((currentValue) => {
-        console.log(currentValue)
-    })
+   // let unsubscribeStore = focus.subscribe((currentValue) => {
+   //      console.log(currentValue)
+   //  })
 	</script>
 	<div class="map">
 	  <Map {options} />
