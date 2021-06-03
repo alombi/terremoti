@@ -8,6 +8,7 @@
    overflow-x: scroll;
    .event{
       display: grid;
+      margin-bottom:10px;
       .map{
          border-bottom-left-radius: 2px;
          border-bottom-right-radius: 2px;
@@ -19,8 +20,8 @@
    background-color: #393A3C;
    width:98%;
    padding:5px;
-	margin-bottom:15px;
-	border-radius:10px;
+   margin-bottom:15px;
+   border-radius:10px;
    text-align: center;
    text-decoration: none;
    color: white;

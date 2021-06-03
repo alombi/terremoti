@@ -120,6 +120,7 @@
 }
 .splittedList .event {
   display: grid;
+  margin-bottom: 10px;
 }
 .splittedList .event .map {
   border-bottom-left-radius: 2px;
