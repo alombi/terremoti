@@ -5,10 +5,10 @@ This project is a web application for monitoring latest earthquakes in Italy, an
 
 ## Project structure
 ### API
-The `backend` folder contains an API endpoint which fetches and parses the INGV public api, since its particular format (QuakeML). 
+The `api` folder contains an API endpoint which fetches and parses the INGV public api, since its particular format (QuakeML). 
 
 ### Web application
-In the `frontend` folder lives a Svelte web application built with Leaflet maps for showing and exploring all the data fetched from the API.
+The rest of the project is a Svelte web application built with Leaflet maps for showing and exploring all the data fetched from the API.
 
 The website uses [tinro](https://github.com/AlexxNB/tinro) as router and [leaflet-svelte](https://github.com/anoram/leaflet-svelte) as Leaflet wrapper.
 
