@@ -2,11 +2,27 @@
   height: 500px;
   width: 100%;
   z-index: 1;
+  border-radius: 10px;
 }
 
-@media (min-width: 1000px) {
+@media (min-height: 700px) {
   .map {
-    height: 650px;
+    height: 570px;
+  }
+}
+@media (min-height: 750px) and (max-height: 800px) {
+  .map {
+    height: 630px;
+  }
+}
+@media (min-height: 800px) {
+  .map {
+    height: 710px;
+  }
+}
+@media (min-height: 1000px) {
+  .map {
+    height: 860px;
   }
 }
 .special_event_bar {
@@ -77,9 +93,87 @@
   justify-items: center;
 }
 
+.event {
+  background-color: #393A3C;
+  width: 98%;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
 @media (max-width: 1000px) {
   .list {
     grid-template-columns: 100%;
+  }
+}
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.splittedList {
+  margin-left: 10px;
+  max-height: 580px;
+  overflow-x: scroll;
+}
+.splittedList .event {
+  display: grid;
+  margin-bottom: 10px;
+}
+.splittedList .event .map {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  height: 150px;
+}
+
+.splittedEvent {
+  background-color: #393A3C;
+  width: 98%;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+#did {
+  font-size: 12px;
+  opacity: 0.7;
+  padding-left: 10px;
+  margin-bottom: -20px;
+}
+
+.splitSelector {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  margin-bottom: 5px;
+}
+
+.splitSelector {
+  margin-top: -40px;
+}
+
+@media (min-height: 700px) {
+  .splittedList {
+    max-height: 570px;
+  }
+}
+@media (min-height: 750px) and (max-height: 800px) {
+  .splittedList {
+    max-height: 630px;
+  }
+}
+@media (min-height: 800px) {
+  .splittedList {
+    max-height: 710px;
+  }
+}
+@media (min-height: 1000px) {
+  .splittedList {
+    max-height: 860px;
   }
 }
 html, body {
@@ -116,22 +210,12 @@ a {
   padding-top: 200px;
 }
 
-.event {
-  background-color: #393A3C;
-  width: 98%;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-}
-
 .footer {
   text-align: center;
-  color: #AAA;
   font-size: 13px;
   padding-bottom: 15px;
   padding-top: 15px;
+  opacity: 0.6;
 }
 
 @media (max-width: 1000px) {

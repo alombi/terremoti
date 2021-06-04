@@ -2,6 +2,7 @@
    //import { events } from '../events.js';
    import Map from '@anoram/leaflet-svelte';   
    export let event;
+   export let zoom;
    // function checkId(event){
    //    return event.eventID == id 
    // }
@@ -9,7 +10,7 @@
    let options = {
       attributionControl:false,
       center: [event.lat,event.long],
-      zoom:10,
+      zoom:zoom,
       controls:{
          zoomControl:true
       },

@@ -4,6 +4,7 @@
    import { getNotificationsContext } from 'svelte-notifications';
    const { addNotification } = getNotificationsContext();
    import { events } from '../events.js';
+   import { focus } from '../focusEvent';
    let data = $events
    let markers = [];
    for(var i = 0; i < data.length; i++){
@@ -53,6 +54,10 @@
          }
       }
    })
+
+   // let unsubscribeStore = focus.subscribe((currentValue) => {
+   //      console.log(currentValue)
+   //  })
 	</script>
 	<div class="map">
 	  <Map {options} />
