@@ -92,7 +92,11 @@
 					<option value="important">Sort per importance</option>
 				</select>
 			</div>
-			<SplitView />
+			{#await updatingList}
+				<span></span>
+			{:then}	
+				<SplitView />
+			{/await}
 		{/if}
 		<Footer />
 	{/await}
