@@ -17,7 +17,7 @@
 	let sort;
 	let promise, updatingList;
 	async function getData(){
-		let request = await fetch('https://ingv.alombi.xyz/api/latest')
+		let request = await fetch('https://ingv.alombi.xyz/latest')
 		let response = await request.json()
 		data = response.events
 		events.set(data)
