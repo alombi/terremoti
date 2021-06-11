@@ -82,6 +82,7 @@ module.exports = async (req, res) => {
   let oneWeekAgo = moment().subtract(7, 'days').format('YYYY-MM-DD')
   let eventsSorted = await getWeekly(oneWeekAgo)
   let weekly = eventsSorted.slice(0, 12)
+  res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Content-type', 'application/json')
   res.json(weekly)
 }
