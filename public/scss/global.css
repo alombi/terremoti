@@ -108,6 +108,13 @@
     grid-template-columns: 100%;
   }
 }
+#weekly .event {
+  margin-bottom: 20px;
+}
+#weekly .event .map {
+  height: 150px;
+}
+
 .split {
   display: grid;
   grid-template-columns: repeat(2, 50%);

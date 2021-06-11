@@ -9,20 +9,27 @@
 	import { Jumper } from 'svelte-loading-spinners'
 	import Notifications from 'svelte-notifications';
 	import { events } from './events.js';
+	import { weekly } from './weekly.js';
 	import { specialEvent } from './specialEvent.js'
 	import { Route, router } from 'tinro';
 	import Footer from './components/Footer.svelte';
+	import Weekly from './components/Weekly.svelte';
 	router.mode.memory();
 	let data = [];
 	let sort;
 	let promise, updatingList;
 	async function getData(){
-		let request = await fetch('https://ingv.alombi.xyz/latest')
-		let response = await request.json()
+		var request = await fetch('https://ingv.alombi.xyz/latest')
+		var response = await request.json()
 		data = response.events
 		events.set(data)
 		var special = response.specialEvent
 		specialEvent.set(special)
+		// Retrieving weekly too
+		var weeklyRequest = await fetch('https://earthquakes-el7sryrcl-alombi.vercel.app/weekly')
+		var weeklyResponse = await weeklyRequest.json()
+		weekly.set(weeklyResponse)
+
 		return data 
 	}
 	async function changeSort(){
@@ -98,6 +105,10 @@
 				<SplitView />
 			{/await}
 		{/if}
+		<br>
+		<h2>Weekly report</h2>
+		<p>The most important and notable events of the week.</p>
+		<Weekly />
 		<Footer />
 	{/await}
 	</Route>

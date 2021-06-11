@@ -7,6 +7,10 @@
     {
       "src":"/latest",
       "dest":"/api/ingv-latest.js"
+    },
+    {
+      "src":"/weekly",
+      "dest":"/api/weekly.js"
     }
   ]
 }
