@@ -3,7 +3,7 @@
    import { weekly } from '../weekly.js'
 </script>
 
-<div class="list">
+<div class="list" id="weekly">
    {#each $weekly as event}
       <EventBox event={event} zoom=10 />
    {/each}

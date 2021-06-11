@@ -26,10 +26,9 @@
 		var special = response.specialEvent
 		specialEvent.set(special)
 		// Retrieving weekly too
-		var weeklyRequest = await fetch('https://ingv.alombi.xyz/weekly')
+		var weeklyRequest = await fetch('https://earthquakes-el7sryrcl-alombi.vercel.app/weekly')
 		var weeklyResponse = await weeklyRequest.json()
-		var weekly = weeklyResponse.events
-		weekly.set(weekly)
+		weekly.set(weeklyResponse)
 
 		return data 
 	}
@@ -107,8 +106,9 @@
 			{/await}
 		{/if}
 		<br>
-		<!-- <h2>Weekly report</h2>
-		<Weekly /> -->
+		<h2>Weekly report</h2>
+		<p>The most important and notable events of the week.</p>
+		<Weekly />
 		<Footer />
 	{/await}
 	</Route>
