@@ -1,11 +1,19 @@
 <script>
    import { events } from '../events.js';
+   import { weekly } from '../weekly.js';
    import Map from '@anoram/leaflet-svelte';   
    export let id;
    let event;
    for(var i = 0; i < $events.length; i++){
       if($events[i].eventID == id){
          event = $events[i]
+      }
+   }
+   if(event == undefined){
+      for(var i = 0; i < $weekly.length; i++){
+         if($weekly[i].eventID == id){
+            event = $weekly[i]
+         }
       }
    }
    let options = {
