@@ -26,7 +26,7 @@
 		var special = response.specialEvent
 		specialEvent.set(special)
 		// Retrieving weekly too
-		var weeklyRequest = await fetch('https://earthquakes-el7sryrcl-alombi.vercel.app/weekly')
+		var weeklyRequest = await fetch('https://ingv.alombi.xyz/weekly')
 		var weeklyResponse = await weeklyRequest.json()
 		weekly.set(weeklyResponse)
 
