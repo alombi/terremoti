@@ -97,8 +97,8 @@ async function getLast37(){
 
 module.exports = async (req, res) => {
   let data = await getLast37()
-  let specialEvent = detectSpecialEvent(data)
-  data['specialEvent'] = specialEvent;
+  // let specialEvent = detectSpecialEvent(data)
+  // data['specialEvent'] = specialEvent;
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Content-type', 'application/json')
   res.json(data)
