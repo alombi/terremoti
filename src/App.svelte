@@ -17,7 +17,7 @@
 	router.mode.memory();
 	let data = [];
 	let sort;
-	let promise, updatingList;
+	let promise, promise2, updatingList;
 	async function getData(){
 		var request = await fetch('https://ingv.alombi.xyz/latest')
 		var response = await request.json()
@@ -25,12 +25,17 @@
 		events.set(data)
 		var special = response.specialEvent
 		specialEvent.set(special)
+
+		return data 
+	}
+	async function getSecondaryData(){
 		// Retrieving weekly too
 		var weeklyRequest = await fetch('https://ingv.alombi.xyz/weekly')
 		var weeklyResponse = await weeklyRequest.json()
 		weekly.set(weeklyResponse)
-
-		return data 
+		
+		var data2 = weeklyResponse;
+		return data2
 	}
 	async function changeSort(){
 		var sorting = document.getElementById('sort').value;
@@ -50,6 +55,7 @@
 		}
 	}
 	promise = getData()
+	promise2 = getSecondaryData()
 	// Detecting screen width and deciding if splitView needs to be applied
 	let splitView = false;
 	if(window.innerWidth > 900){
@@ -106,11 +112,15 @@
 			{/await}
 		{/if}
 		<br>
+	{/await}
+	{#await promise2}
+		<span></span>
+	{:then}
 		<h2>Weekly report</h2>
 		<p>The most important and notable events of the week.</p>
 		<Weekly />
-		<Footer />
 	{/await}
+		<Footer />
 	</Route>
 	<Route path="event/:id" let:meta>
 		<Event id={meta.params.id} />
