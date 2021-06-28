@@ -10,6 +10,7 @@
       document.getElementsByTagName('body')[0].style.paddingTop = "50px";
    }
    function initialize(){
+      window.scrollTo({top:0, behavior: 'smooth'})
       let event = $specialEvent;
       // if (event != null){
       //    setSpecialEvent()
@@ -20,7 +21,9 @@
    })
 
    function scrollToWeekly(){
-      document.getElementById('weekly').scrollIntoView({behavior: 'smooth'});
+      var e = document.getElementById('weekly');
+      var y = e.getBoundingClientRect().y
+      window.scrollTo({top:y, behavior: 'smooth'})
    }
 </script>
 

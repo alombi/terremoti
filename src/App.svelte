@@ -77,6 +77,7 @@
 			<Jumper size="60" color="#FFFFFF" unit="px" duration="1s"></Jumper>
 		</div>
 	{:then data}
+		<span id="top" ></span>
 		<h1 class="title">Latest earthquakes <span id="desktop_only">in Italy</span></h1> 
 		{#if !splitView}
 			<MainMap />
