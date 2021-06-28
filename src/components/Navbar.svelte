@@ -18,13 +18,20 @@
    onMount(()=>{
       initialize()
    })
+
+   function scrollToWeekly(){
+      document.getElementById('weekly').scrollIntoView({behavior: 'smooth'});
+   }
 </script>
 
 <div class="fake"></div>
 <div class="navbar">
    <a on:click={initialize} id="logo" href="/">🌍 Earthquakes</a>
    <div id="options">
-      <a on:click={refresh} href={window.location.href}>Refresh</a>
+      <a on:click={refresh} href={window.location.href}>
+         <ion-icon name="refresh"></ion-icon>
+      </a>
+      <a on:click={scrollToWeekly}>Weekly</a>
       <a href="/about">About</a>
    </div>
 </div>
@@ -32,5 +39,8 @@
 <style>
    a{
       font-size:15px;
+   }
+   ion-icon{
+      margin:-4px;
    }
 </style>

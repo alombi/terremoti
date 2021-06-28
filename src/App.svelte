@@ -116,6 +116,7 @@
 	{#await promise2}
 		<span></span>
 	{:then}
+		<span id="weekly"><br><br></span>
 		<h2>Weekly report</h2>
 		<p>The most important and notable events of the week.</p>
 		<Weekly />
