@@ -16,6 +16,11 @@
          }
       }
    }
+   // Avoiding magUncertainty to shiw null (#9)
+   if(event.magUncertainty == null){
+      event.magUncertainty = 0;
+   };
+
    let options = {
       attributionControl:false,
       center: [event.lat,event.long],
