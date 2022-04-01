@@ -1,4 +1,5 @@
 <script>
+	import { Modals, closeModal } from 'svelte-modals'
 	import Navbar from './components/Navbar.svelte';
 	import MainMap from './components/MainMap.svelte';
 	import MainList from './components/MainList.svelte';
@@ -11,10 +12,8 @@
 	import { events } from './events.js';
 	import { weekly } from './weekly.js';
 	import { specialEvent } from './specialEvent.js'
-	import { Route, router } from 'tinro';
 	import Footer from './components/Footer.svelte';
 	import Weekly from './components/Weekly.svelte';
-	router.mode.memory();
 	let data = [];
 	let sort;
 	let promise, promise2, updatingList;
@@ -64,77 +63,29 @@
 </script>
 
 <Notifications>
+<Navbar />
 <main>
-	{#await promise}
-		<p></p>
-	{:then}
-		<!-- <SpecialEventBar /> -->
-		<Navbar/>
-	{/await}
-	<Route path="/">
-	{#await promise}
-		<div class="spinner">
-			<Jumper size="60" color="#FFFFFF" unit="px" duration="1s"></Jumper>
-		</div>
-	{:then data}
-		<span id="top" ></span>
-		<h1 class="title">Latest earthquakes <span id="desktop_only">in Italy</span></h1> 
-		{#if !splitView}
-			<MainMap />
-			<br><hr>
-			<div id="list_title_div">
-				<h2 id="list_title">Earthquakes list</h2>
-				<!-- svelte-ignore a11y-no-onchange -->
-				<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
-					<option value="latest">Sort per latest</option>
-					<option value="important">Sort per importance</option>
-				</select>
-			</div>	
-			{#await updatingList}
-				<span></span>
-			{:then}
-				<MainList />
-			{/await}
-		{:else}
-			<div class="splitSelector">
-				<span></span>
-				<span></span>
-				<p id="did">Scroll down and tap one event to focus</p>
-				<!-- svelte-ignore a11y-no-onchange -->
-				<select name="sort" id="sort" bind:value={sort} on:change={changeSort}>
-					<option value="latest">Sort per latest</option>
-					<option value="important">Sort per importance</option>
-				</select>
-			</div>
-			{#await updatingList}
-				<span></span>
-			{:then}	
-				<SplitView />
-			{/await}
-		{/if}
-		<br>
-	{/await}
-	{#await promise2}
-		<span></span>
-	{:then}
-		<span id="weekly"><br><br></span>
-		<h2>Weekly report</h2>
-		<p>The most important and notable events of the week.</p>
-		<Weekly />
-	{/await}
-		<Footer />
-	</Route>
-	<Route path="event/:id" let:meta>
-		<Event id={meta.params.id} />
-	</Route>
-	<Route path="/about">
-		<About />
-	</Route>
+	<h1>Website is under maintenance. Version 2.0 is coming soon.</h1>
 </main>
 </Notifications>
+<Modals>
+	<div
+	  slot="backdrop"
+	  class="backdrop"
+	  on:click={closeModal}
+	/>
+</Modals>
 
 <style>
-	#list_title{
-		padding-left: 5px;
+	main{
+		padding-top:40px;
 	}
+	.backdrop {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(0,0,0,0.50)
+  }
 </style>
