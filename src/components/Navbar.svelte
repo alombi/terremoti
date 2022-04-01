@@ -1,49 +1,59 @@
 <script>
-   import { onMount } from 'svelte';
-   import { specialEvent } from '../specialEvent.js'
-   
-   function refresh(){
-      sessionStorage.setItem('refresh', true)
-   }
-   function setSpecialEvent(){
-      document.getElementsByClassName('navbar')[0].style.top = "50px";
-      document.getElementsByTagName('body')[0].style.paddingTop = "50px";
-   }
-   function initialize(){
-      window.scrollTo({top:0, behavior: 'smooth'})
-      let event = $specialEvent;
-      // if (event != null){
-      //    setSpecialEvent()
-      // }
-   }
-   onMount(()=>{
-      initialize()
-   })
+   import feather from 'feather-icons';
+   import { openModal } from 'svelte-modals';
+   import Modal from './Modal.svelte'
 
-   function scrollToWeekly(){
-      var e = document.getElementById('weekly');
-      var y = e.getBoundingClientRect().y
-      window.scrollTo({top:y, behavior: 'smooth'})
+   function openAbout(){
+      openModal(Modal, {title:"About the project", message:"A web app for checking latest earthquakes in Italy, with interactive maps.<br>Created by <a href=\"https:alombi.xyz\" target=\"_blank\">alombi</a>, and open source on <a target=\"_blank\" href=\"https://github.com/alombi/earthquakes\">GitHub</a>"})
    }
 </script>
 
 <div class="fake"></div>
-<div class="navbar">
-   <a on:click={initialize} id="logo" href="/">🌍 Earthquakes</a>
-   <div id="options">
-      <a on:click={refresh} href={window.location.href}>
-         <ion-icon name="refresh"></ion-icon>
-      </a>
-      <a on:click={scrollToWeekly}>Weekly</a>
-      <a href="/about">About</a>
+<nav>
+   <div class="left-block">
+      <a class="nav-title button" href="/">Earthquakes v2</a>
    </div>
-</div>
+  <div class="rigth-block">
+      <a on:click={openAbout} href="/#" class="button-icon">{@html feather.icons.info.toSvg()}</a>
+      <a href="https://github.com/alombi/earthquakes" target="_blank" class="button-icon">{@html feather.icons.github.toSvg()}</a>
+  </div>
+</nav>
+
 
 <style>
    a{
-      font-size:15px;
+      color:white;
+      text-decoration: none;
    }
-   ion-icon{
-      margin:-4px;
+   .fake{
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height:50px;
+      background-color: #333333;
+      z-index: 2;
+      opacity: .6;
+   }
+   nav {
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height:50px;
+      display:flex;
+      align-items: center;
+      justify-content:space-between;
+      z-index: 2;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px)
+   }
+   nav > div{
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+   .nav-title{
+      font-weight: 600;
    }
 </style>
+
