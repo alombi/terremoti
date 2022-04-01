@@ -1,41 +1,10 @@
 <script>
+	import { getData } from './lib/functions';
+	import { events, weekly, specialEvent } from './lib/stores';
 	import { Modals, closeModal } from 'svelte-modals'
-	import Navbar from './components/Navbar.svelte';
-	import MainMap from './components/MainMap.svelte';
-	import MainList from './components/MainList.svelte';
-	import Event from './components/Event.svelte';
-	import About from './components/About.svelte';
-	import SplitView from './components/SplitView.svelte';
-	import SpecialEventBar from './components/SpecialEventBar.svelte';
-	import { Jumper } from 'svelte-loading-spinners'
 	import Notifications from 'svelte-notifications';
-	import { events } from './events.js';
-	import { weekly } from './weekly.js';
-	import { specialEvent } from './specialEvent.js'
-	import Footer from './components/Footer.svelte';
-	import Weekly from './components/Weekly.svelte';
-	let data = [];
-	let sort;
-	let promise, promise2, updatingList;
-	async function getData(){
-		var request = await fetch('https://ingv.alombi.xyz/latest')
-		var response = await request.json()
-		data = response.events
-		events.set(data)
-		var special = response.specialEvent
-		specialEvent.set(special)
-
-		return data 
-	}
-	async function getSecondaryData(){
-		// Retrieving weekly too
-		var weeklyRequest = await fetch('https://ingv.alombi.xyz/weekly')
-		var weeklyResponse = await weeklyRequest.json()
-		weekly.set(weeklyResponse)
-		
-		var data2 = weeklyResponse;
-		return data2
-	}
+	import Navbar from './components/Navbar.svelte';
+	
 	async function changeSort(){
 		var sorting = document.getElementById('sort').value;
 		if(sorting == "important"){
@@ -53,8 +22,6 @@
 			});
 		}
 	}
-	promise = getData()
-	promise2 = getSecondaryData()
 	// Detecting screen width and deciding if splitView needs to be applied
 	let splitView = false;
 	if(window.innerWidth > 900){
