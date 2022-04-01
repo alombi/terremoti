@@ -1,9 +1,16 @@
-# Latest earthquakes in Italy 🌍 🇮🇹
+# Latest earthquakes in Italy
 <a href="https://ingv.alombi.xyz">Live app</a> | <a href="http://www.ingv.it/">Source</a>
 
 A web application for easily and quickly monitoring latest earthquakes in Italy, and showing them in an interactive and well-looking map.
 
-The project is now stable, and further development - both improvements and features - is planned.
+
+## Status
+A 2.0 version is currently in development, and will feature a new design, an overall performance improvement and some new features. 
+The main 1.0 problem was the UI and the user experience (both on desktop and mobile): the aim of the version 2.0 is to solve those issues.
+
+For the older version, check the `v1.0` branch.
+
+<!-- The project is now stable, and further development - both improvements and features - is planned. -->
 
 ## Goals
 The goal is to make easy and quick checking for earthquakes or seismic events on the Italian territory. The API is intended to be used only in this project.
