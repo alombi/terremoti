@@ -11,7 +11,7 @@
 <div class="fake"></div>
 <nav>
    <div class="left-block">
-      <a class="nav-title button" href="/">Earthquakes v2</a>
+      <a class="nav-title button" href="/">{@html feather.icons.activity.toSvg()} Earthquakes v2</a>
    </div>
   <div class="rigth-block">
       <a on:click={openAbout} href="/#" class="button-icon">{@html feather.icons.info.toSvg()}</a>
