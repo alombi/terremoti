@@ -1,14 +1,16 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public --no-clear"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "leaflet": "^1.7.1",
     "node-fetch": "^2.6.1",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
@@ -16,16 +18,16 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.0.0",
+    "svelte-leafletjs": "^0.8.2",
     "vercel": "^21.0.1",
     "xml2js": "^0.4.23"
   },
   "dependencies": {
     "feather-icons": "^4.29.0",
-    "@anoram/leaflet-svelte": "0.0.7-1",
+    "sirv-cli": "^2.0.0",
+    "svelte-modals": "^1.1.0",
     "moment": "^2.29.1",
-    "sirv-cli": "^1.0.0",
     "svelte-loading-spinners": "^0.1.4",
-    "svelte-notifications": "^0.9.9",
-    "svelte-modals": "^1.1.0"
+    "svelte-notifications": "^0.9.9"
   }
 }
