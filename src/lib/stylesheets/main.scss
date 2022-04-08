@@ -5,6 +5,11 @@ body {
 	color: #ffffff;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+.loader{
+   display: flex;
+   justify-content: center;
+   padding-top: 350px;
+}
 .button{
 	padding:5px 15px;
 }

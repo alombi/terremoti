@@ -1,16 +1,18 @@
 <script>
+	import Notifications from 'svelte-notifications';
+	import { BarLoader } from 'svelte-loading-spinners'
 	import { Modals, closeModal } from 'svelte-modals'
 	import { getData } from './lib/functions/fetchData';
 	import Navbar from './lib/components/Navbar.svelte';
 	import Map from './lib/components/Map.svelte';
 
-	let loading = getData()
+	let loading = getData(false)
 </script>
 
-
+<Notifications>
 <Navbar />
 {#await loading}
-		<p>aa</p>
+	<div class="loader"><BarLoader size="60" color="#aaa" unit="px" duration="1s"></BarLoader></div>
 	{:then loading} 
 		<h1>Earthquakes map</h1>
 		<Map />
@@ -22,6 +24,7 @@
 	  on:click={closeModal}
 	/>
 </Modals>
+</Notifications>
 
 <style>
 	.backdrop {
