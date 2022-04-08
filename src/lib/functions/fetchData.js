@@ -1,4 +1,4 @@
-import { events } from './stores'
+import { events } from '../stores/events';
 
 export async function getData() {
    const url = 'https://ingv.alombi.xyz/latest'
