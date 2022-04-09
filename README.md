@@ -25,7 +25,7 @@ The rest of the project is a Svelte web application built with Leaflet maps for 
 Any ideas or pull request is always welcome. If you have a bug to report, please open an issue.
 
 ## iOS and iPadOS widget
-I've also written a small iOS widget that show the latest event right in your home screen. Find it here [https://github.com/alombi/ios-scripting/blob/master/earthquake.js](https://github.com/alombi/ios-scripting/blob/master/earthquake.js)
+I've also written an useful iOS widget that show the latest event right in your home screen. You can find it at: [alombi/earthquake-widget](https://github.com/alombi/earthquake-widget)
 
 **Note: requires iOS 14 or newer and the Scriptable app.**
 ### How to setup 
