@@ -35,7 +35,7 @@
             <Circle events={['click']} on:click={()=>{tap(event)}} latLng={[event.lat, event.long]} radius={radius} color={colors[event.color]} weight="2" fillOpacity="0.6" fillColor={colors[event.color]}>
 					<Popup>
 						<b>{event.mag} Mg</b> - {event.region}<br>
-						<span>{new Date(event.time).getDate().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} {months[new Date(event.time).getMonth()]} {new Date(event.time).getFullYear()} - {new Date(event.time).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{new Date(event.time).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} - Depth: {Number(event.depth) / 1000} Km</span>
+						<span>{new Date(event.time).getDate().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} {months[new Date(event.time).getMonth()]} {new Date(event.time).getFullYear()}, at {new Date(event.time).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{new Date(event.time).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} - Depth: {Number(event.depth) / 1000} Km</span>
 					</Popup>
 				</Circle>
          {/each}
