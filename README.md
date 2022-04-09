@@ -5,8 +5,9 @@ A web application for easily and quickly monitoring latest earthquakes in Italy,
 
 
 ## Status
-A 2.0 version is currently in development, and will feature a new design, an overall performance improvement and some new features. 
-The main 1.0 problem was the UI and the user experience (both on desktop and mobile): the aim of the version 2.0 is to solve those issues.
+The project reached version `v2.0` in April 2022, and further development - both improvements and features - is planned.
+<!--A 2.0 version is currently in development, and will feature a new design, an overall performance improvement and some new features. 
+The main 1.0 problem was the UI and the user experience (both on desktop and mobile): the aim of the version 2.0 is to solve those issues.-->
 
 For the older version, check the `v1.0` branch.
 
