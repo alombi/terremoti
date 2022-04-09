@@ -14,7 +14,7 @@
 {#await loading}
 	<div class="loader"><BarLoader size="60" color="#aaa" unit="px" duration="1s"></BarLoader></div>
 	{:then loading} 
-		<h1>Earthquakes map</h1>
+		<h1>Latest earthquakes</h1>
 		<Map />
 {/await}
 <Modals>
