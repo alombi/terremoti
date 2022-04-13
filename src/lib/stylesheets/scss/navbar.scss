@@ -6,6 +6,7 @@
    height:50px;
    background-color: #333333;
    opacity: .6;
+   z-index:2;
 }
 nav {
    position: fixed;
@@ -22,6 +23,7 @@ nav {
       color:white !important;
       text-decoration: none;
    }
+   z-index: 2;
 }
 nav > div{
    margin-left: 5px;

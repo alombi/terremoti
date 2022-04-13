@@ -6,6 +6,7 @@
   height: 50px;
   background-color: #333333;
   opacity: 0.6;
+  z-index: 2;
 }
 
 nav {
@@ -19,6 +20,7 @@ nav {
   justify-content: space-between;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
+  z-index: 2;
 }
 nav .nav-link {
   color: white !important;
@@ -93,4 +95,7 @@ h1 {
 a {
   color: #a1c4fd !important;
   text-decoration: none;
+}
+#map{
+	z-index: 1;
 }/*# sourceMappingURL=main.css.map */
