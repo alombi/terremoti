@@ -31,7 +31,7 @@
          <a class="nav-title button nav-link icon" href="/">{@html feather.icons.activity.toSvg()} Earthquakes v2</a>
       </div>
    <div class="rigth-block">
-         <a on:click={switchMode} href="/#aa" class="button-icon nav-link icon" >{@html feather.icons[icon].toSvg()}</a>
+         <a on:click={switchMode} href="/#" class="button-icon nav-link icon" >{@html feather.icons[icon].toSvg()}</a>
          <a on:click={()=>{getData(true)}} href="/#" class="button-icon nav-link icon" >{@html feather.icons['refresh-cw'].toSvg()}</a>
          <a href="https://github.com/alombi/earthquakes" target="_blank" class="button-icon nav-link icon">{@html feather.icons.github.toSvg()}</a>
    </div>
