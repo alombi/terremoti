@@ -3,19 +3,27 @@
 	import { BarLoader } from 'svelte-loading-spinners'
 	import { Modals, closeModal } from 'svelte-modals'
 	import { getData } from './lib/functions/fetchData';
+	import { weekly } from './lib/stores/layout';
 	import Navbar from './lib/components/Navbar.svelte';
 	import Map from './lib/components/Map.svelte';
-
+	import Sidebar from './lib/components/Sidebar.svelte';
+	import List from './lib/components/List.svelte';
 	let loading = getData(false)
 </script>
 
 <Notifications>
-<Navbar />
+<Sidebar />
+<Navbar/>
 {#await loading}
 	<div class="loader"><BarLoader size="60" color="#aaa" unit="px" duration="1s"></BarLoader></div>
 	{:then loading} 
+		{#if !$weekly}
 		<h1>Latest earthquakes</h1>
-		<Map />
+			<Map />
+		{:else}
+		<h1>Weekly report</h1>
+			<List />
+		{/if}
 {/await}
 <Modals>
 	<div

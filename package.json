@@ -28,6 +28,7 @@
     "svelte-modals": "^1.1.0",
     "moment": "^2.29.1",
     "svelte-loading-spinners": "^0.1.4",
-    "svelte-notifications": "^0.9.9"
+    "svelte-notifications": "^0.9.9",
+    "@anoram/leaflet-svelte": "0.0.7-1"
   }
 }

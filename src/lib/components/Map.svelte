@@ -1,11 +1,14 @@
 <script>
+	import { onMount } from 'svelte';
 	const months = ['Gennaio' ,'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
 	import { LeafletMap, TileLayer, Circle, Popup } from 'svelte-leafletjs';
-    import { events } from '../stores/events';
+   import { events } from '../stores/events';
+	import { icon } from '../stores/layout'
 
 	const mapOptions = {
 		 center: [42, 13],
 		 zoom: 6,
+		 //scrollWheelZoom: false
 	};
 	const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 	const tileLayerOptions = {
@@ -26,6 +29,19 @@
 		radius = 5000
 	}
 	let radius = 9000;
+
+	function detectColor(){
+		if(window.localStorage.getItem('mode') == 'moon'){
+			document.getElementsByClassName('map-tiles-container')[0].classList.add('map-tiles')
+			$icon = 'sun'
+		} else{
+			document.getElementsByClassName('map-tiles-container')[0].classList.remove('map-tiles')
+			$icon = 'moon'
+		}
+	}
+	onMount(()=>{
+		detectColor()
+	})
 </script>
 
 <div id="map" style="width: 100%; height: 80%;">

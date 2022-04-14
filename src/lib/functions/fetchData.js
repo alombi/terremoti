@@ -1,4 +1,4 @@
-import { events, refreshed } from '../stores/events';
+import { events, refreshed, weeklyEvents } from '../stores/events';
 
 export async function getData(isRefresh) {
    const url = 'https://ingv.alombi.xyz/latest'
@@ -9,4 +9,8 @@ export async function getData(isRefresh) {
    if (isRefresh) {
       refreshed.set(true)
    }
+   const url2 = 'https://ingv.alombi.xyz/weekly'
+   let req2 = await fetch(url2)
+   let json2 = await req2.json()
+   weeklyEvents.set(json2)
 }

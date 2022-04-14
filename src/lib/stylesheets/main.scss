@@ -1,4 +1,5 @@
 @import "scss/navbar.scss";
+@import "scss/sidebar.scss";
 
 :root {
 	--map-tiles-filter: brightness(0.6) invert(1) contrast(2.5) hue-rotate(200deg) saturate(0.5) brightness(0.6);
@@ -57,4 +58,4 @@ a{
 }
 .leaflet-container{
 	z-index: 1; 
-} 
+}
