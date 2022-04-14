@@ -8,7 +8,10 @@ export async function getData(isRefresh) {
    events.set(json)
    if (isRefresh) {
       refreshed.set(true)
-   }
+   }  
+}
+
+export async function getLazyData() {
    const url2 = 'https://ingv.alombi.xyz/weekly'
    let req2 = await fetch(url2)
    let json2 = await req2.json()

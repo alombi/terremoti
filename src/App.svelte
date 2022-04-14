@@ -2,12 +2,13 @@
 	import Notifications from 'svelte-notifications';
 	import { BarLoader } from 'svelte-loading-spinners'
 	import { Modals, closeModal } from 'svelte-modals'
-	import { getData } from './lib/functions/fetchData';
+	import { getData, getLazyData } from './lib/functions/fetchData';
 	import { weekly } from './lib/stores/layout';
 	import Navbar from './lib/components/Navbar.svelte';
 	import Map from './lib/components/Map.svelte';
 	import Sidebar from './lib/components/Sidebar.svelte';
 	import List from './lib/components/List.svelte';
+	getLazyData()
 	let loading = getData(false)
 </script>
 
