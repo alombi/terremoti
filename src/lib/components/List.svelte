@@ -12,7 +12,7 @@
    {#each $weeklyEvents as event}
       <div class="event">
          <p class="event-title">{event.region} - {event.mag} Mg</p>
-         <p>{new Date(event.time).getDate().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})} {months[new Date(event.time).getMonth()]} {new Date(event.time).getFullYear()}, at {new Date(event.time).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{new Date(event.time).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</p>
+         <p>{new Date(event.time).getDate()} {months[new Date(event.time).getMonth()]}, at {new Date(event.time).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{new Date(event.time).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</p>
       </div>
    {/each}
 </div>
