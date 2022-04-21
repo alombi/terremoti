@@ -15,6 +15,7 @@
          <p>{new Date(event.time).getDate()} {months[new Date(event.time).getMonth()]}, at {new Date(event.time).getHours().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}:{new Date(event.time).getMinutes().toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}</p>
       </div>
    {/each}
+   <br>
 </div>
 
 
