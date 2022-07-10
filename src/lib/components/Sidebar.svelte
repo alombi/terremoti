@@ -23,16 +23,16 @@
        </p>
       <div class="headerLinks">
          <a on:click={goHome} class="icon" href="/#">{@html feather.icons.map.toSvg()} Home</a>
-         <a on:click={goWeekly} class="icon" href="/#">{@html feather.icons.calendar.toSvg()} Weekly report</a>
+         <a on:click={goWeekly} class="icon" href="/#">{@html feather.icons.calendar.toSvg()} Report settimanale</a>
          <a class="icon" href="https://github.com/alombi/earthquake-widget" target="_blank">{@html feather.icons.grid.toSvg()} iOS Widget</a>
        </div>
 
        <p class="sidebarHeader">
-         <span>About</span>
+         <span>Sul progetto</span>
        </p>
        <div class="headerLinks">
-         <a class="icon" href="https://github.com/alombi/earthquakes" target="_blank">{@html feather.icons.github.toSvg()} Source code</a>
-         <a class="icon" href="https://alombi.xyz" target="_blank">{@html feather.icons.user.toSvg()} About me</a>
+         <a class="icon" href="https://github.com/alombi/earthquakes" target="_blank">{@html feather.icons.github.toSvg()} Codice sorgente</a>
+         <a class="icon" href="https://alombi.xyz" target="_blank">{@html feather.icons.user.toSvg()} Informazioni</a>
        </div>
    </div>
 </div>

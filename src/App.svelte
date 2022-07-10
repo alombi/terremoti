@@ -19,10 +19,10 @@
 	<div class="loader"><BarLoader size="60" color="#aaa" unit="px" duration="1s"></BarLoader></div>
 	{:then loading} 
 		{#if !$weekly}
-		<h1>Latest earthquakes</h1>
+		<h1>Ultimi movimenti sismici</h1>
 			<Map />
 		{:else}
-		<h1>Weekly report</h1>
+		<h1>Report settimanale</h1>
 			<List />
 		{/if}
 {/await}
