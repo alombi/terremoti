@@ -8,7 +8,7 @@
    $:{
       console.log($refreshed)
       if($refreshed){
-         addNotification({text:'Data refreshed!', position:'top-center', type:'default', removeAfter: '2000'})
+         addNotification({text:'Dati aggiornati!', position:'top-center', type:'default', removeAfter: '2000'})
          refreshed.set(false)
       }
    }
