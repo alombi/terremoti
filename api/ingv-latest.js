@@ -88,7 +88,9 @@ async function getLast37(){
       'mag':magnitudo,
       'magUncertainty':magnitudoUncertainty,
       'color':color,
-      'eventID':eventID
+      'eventID':eventID,
+      'latitude': Number(lat),
+      'longitude': Number(long)
     };
     last37.events.push(event)
   }
