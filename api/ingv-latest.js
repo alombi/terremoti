@@ -78,8 +78,14 @@ async function getLast37(){
       magnitudoUncertainty = null
     }
     eventID = responseFormatted[i].$.publicID.replace('smi:webservices.ingv.it/fdsnws/event/1/query?eventId=', '')
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
     let timeToDate = new Date(time)
-    let timeString = timeToDate.toLocaleString('it-IT')
+    let timeString = timeToDate.toLocaleString('it-IT', options)
     var event = {
       'type':type,
       'region':region,
