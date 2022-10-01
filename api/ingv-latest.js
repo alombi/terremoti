@@ -83,6 +83,8 @@ async function getLast37(){
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      hour: 'numeric',
+    minute: 'numeric'
     };
     let timeToDate = new Date(time)
     let timeString = timeToDate.toLocaleString('it-IT', options)
