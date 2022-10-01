@@ -78,6 +78,8 @@ async function getLast37(){
       magnitudoUncertainty = null
     }
     eventID = responseFormatted[i].$.publicID.replace('smi:webservices.ingv.it/fdsnws/event/1/query?eventId=', '')
+    let timeToDate = new Date(time)
+    let timeString = timeToDate.toLocaleString('it-IT')
     var event = {
       'type':type,
       'region':region,
@@ -90,7 +92,8 @@ async function getLast37(){
       'color':color,
       'eventID':eventID,
       'latitude': Number(lat),
-      'longitude': Number(long)
+      'longitude': Number(long),
+      'timeString': timeString
     };
     last37.events.push(event)
   }
