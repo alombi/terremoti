@@ -1,37 +1,38 @@
-# Latest earthquakes in Italy
-<a href="https://ingv.alombi.xyz">Live app</a> | <a href="http://www.ingv.it/">Source</a>
+# create-svelte
 
-A web application for easily and quickly monitoring latest earthquakes in Italy, and showing them in an interactive and well-looking map.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
+## Creating a project
 
-## Status
-The project reached version `v2.0` in April 2022, and further development - both improvements and features - is planned.
-<!--A 2.0 version is currently in development, and will feature a new design, an overall performance improvement and some new features. 
-The main 1.0 problem was the UI and the user experience (both on desktop and mobile): the aim of the version 2.0 is to solve those issues.-->
+If you're seeing this, you've probably already done this step. Congrats!
 
-For the older version, check the `v1.0` branch.
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-<!-- The project is now stable, and further development - both improvements and features - is planned. -->
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-## Goals
-The goal is to make easy and quick checking for earthquakes or seismic events on the Italian territory. The API is intended to be used only in this project.
+## Developing
 
-## Project
-The `api` folder contains an API endpoint which fetches and parses the INGV public api, since its particular format (QuakeML). 
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-The rest of the project is a Svelte web application built with Leaflet maps for showing and exploring all the data fetched from the API. The website uses [tinro](https://github.com/AlexxNB/tinro) as router and [leaflet-svelte](https://github.com/anoram/leaflet-svelte) as Leaflet wrapper.
+```bash
+npm run dev
 
-### Contributing
-Any ideas or pull request is always welcome. If you have a bug to report, please open an issue.
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-## iOS and iPadOS widget
-I've also written an useful iOS widget that show the latest event right in your home screen. You can find it at: [alombi/earthquake-widget](https://github.com/alombi/earthquake-widget)
+## Building
 
-**Note: requires iOS 14 or newer and the Scriptable app.**
-### How to setup 
-1. Download the [Scriptable](https://scriptable.app) app on your device
-2. Copy the widget's code from the link above
-3. Create a new script in the Scriptable app
-4. Paste the code you just copied
-5. Rename the script to "Earthquakes" (optional)
-6. Go to home screen, add a Scriptable widget and from the widget configurator select Script > Earthquakes
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

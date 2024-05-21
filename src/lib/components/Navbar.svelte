@@ -1,55 +1,65 @@
 <script>
-   import feather from 'feather-icons';
-   import { getData } from '../functions/fetchData';
-   import { refreshed } from '../stores/events';
-   import { getNotificationsContext } from 'svelte-notifications';
-   const { addNotification } = getNotificationsContext();
-   import { sidebar, icon } from '../stores/layout';
-   $:{
-      console.log($refreshed)
-      if($refreshed){
-         addNotification({text:'Dati aggiornati!', position:'top-center', type:'default', removeAfter: '2000'})
-         refreshed.set(false)
-      }
-   }
-   function switchMode(){
-      if(!document.getElementsByClassName('map-tiles-container')[0].classList.contains('map-tiles')){
-         document.getElementsByClassName('map-tiles-container')[0].classList.add('map-tiles')
-         $icon = 'sun'
-         window.localStorage.setItem('mode', 'moon')
-      }else{
-         document.getElementsByClassName('map-tiles-container')[0].classList.remove('map-tiles')
-         $icon = 'moon'
-         window.localStorage.setItem('mode', 'sun')
-      }
-   }
-   
-   function openMenu(){
-      if($sidebar){
-         sidebar.set(false)
-      }else{
-         sidebar.set(true)
-      }
-   }
+// @ts-nocheck
+   import { RadioTower } from "lucide-svelte";
+   import { Badge } from "$lib/components/ui/badge/index.ts";
 </script>
 
 <div class="navbar-container">
-   <div class="fake"></div>
    <nav>
       <div class="left-block">
-         <a on:click={openMenu} class="nav-title button nav-link icon" href="/#">{@html feather.icons.menu.toSvg()}</a>
-         <a class="nav-title button nav-link icon" href="/">{@html feather.icons.activity.toSvg()} v2.0</a>
+         <p><a class="nav-title" href="/"><span><RadioTower size={20} /></span>terremoti v3</a></p>
       </div>
-      <div class="rigth-block">
-         <a on:click={switchMode} href="/#" class="button-icon nav-link icon" >{@html feather.icons[$icon].toSvg()}</a>
-         <a on:click={()=>{getData(true)}} href="/#" class="button-icon nav-link icon" >{@html feather.icons['refresh-cw'].toSvg()}</a>
-         <a href="https://github.com/alombi/earthquakes" target="_blank" class="button-icon nav-link icon">{@html feather.icons.github.toSvg()}</a>
+      <div class="right-block">
+         <p><a href="https://github.com/alombi/terremoti">codice</a></p>
       </div>
    </nav>
 </div>
 
 <style>
+   .text-icon > svg{
+  margin-top:-6px;
+  margin-right: 2px;
+}
    .navbar-container{
       padding-bottom: 40px;
+   }
+   nav {
+      position: fixed;
+      top:0;
+      left:0;
+      width: 100%;
+      height:50px;
+      display:flex;
+      align-items: center;
+      justify-content:space-between;
+      z-index: 3;
+
+      font-size: 16px;
+   }
+   .right-block > p > a:hover, .left-block > p > a:hover{
+      color: #FFEA00 !important;
+   }
+   a{
+      text-decoration: underline;
+   }
+   .right-block{
+      display: flex;
+      gap: 1em;
+   }
+   nav > div{
+      margin-left: 50px;
+      margin-right: 50px;
+   }
+   @media (max-width: 768px){
+      nav > div{
+         margin-left: 10px;
+         margin-right: 10px;
+      }
+   }
+   .nav-title{
+      font-weight: 600;
+      display: flex;
+      gap: 0.25em;
+      align-items: center;
    }
 </style>
