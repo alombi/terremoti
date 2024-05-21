@@ -1,9 +1,9 @@
 .mapboxgl-popup-content {
   font-size: 15px;
+  background: black !important;
 }
 .mapboxgl-popup{  
   width: 400px;
-  min-height: 200px;
   border-radius: 5px;
 }
 .date{
